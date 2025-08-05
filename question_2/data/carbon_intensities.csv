@@ -1,0 +1,10 @@
+fuel_type,tonnes_co2e_per_kwh
+coal,0.000937
+natural_gas,0.00042
+oil,0.000813
+nuclear,1.2e-05
+solar_rooftop,4.1e-05
+solar_utility,4.8e-05
+wind_onshore,1.1e-05
+wind_offshore,1.2e-05
+hydro,2.4e-05

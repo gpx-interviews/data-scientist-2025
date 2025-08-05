@@ -207,3 +207,4 @@ pyproject.toml
 .DS_Store
 
 */build_answer.py
+*/produce_test_data.py
