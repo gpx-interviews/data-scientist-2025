@@ -24,6 +24,13 @@ def is_q1_correct():
     correct = output_dict == output_correct
     return correct
 
+def test_returned_dict():
+    data = {
+        'a': 10,
+        'b': -10,
+    }
+    assert isinstance(normalise_dict_scores_01(data), dict)
+
 
 def test_answer_q1():
     assert is_q1_correct()
