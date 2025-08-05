@@ -19,3 +19,5 @@ The CSV must be sorted by year, month, day, hour in ascending order.
 ## Tests
 
 Tests can be ran by running `pytest` in your terminal.
+
+Good luck!
