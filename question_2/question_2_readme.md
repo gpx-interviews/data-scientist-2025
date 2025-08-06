@@ -14,6 +14,8 @@ Please process the data from this API to produce a CSV named hourly_carbon_inten
 - hour (string as 01, 02, 03, etc)
 - tonnes_co2e_per_kwh (float)
 
+You'll also need the data that is available in `question_2/data`.
+
 The CSV must be sorted by year, month, day, hour in ascending order.
 
 ## Tests
