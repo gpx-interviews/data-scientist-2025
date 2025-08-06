@@ -4,7 +4,7 @@ For each hour of each day for the BPAT power region in the US, we'd like to calc
 
 For context: we use this in our calculations (multiplying by the kwh of a resource) to calculate the co2e.
 
-In answer_q3.py, fuel type data from eia.gov is requested – this is requested from the same portal we looked at in the previous interview.
+In answer_q2.py, fuel type data from eia.gov is requested – this is requested from the same portal we looked at in the previous interview.
 
 Please process the data from this API to produce a CSV named hourly_carbon_intensity_july_2025.csv in the current directory with the following columns:
 

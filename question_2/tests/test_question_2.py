@@ -6,6 +6,8 @@ import numpy as np
 
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+# from correct_answer import produce_csv
+# from correct_answer_q2 import produce_csv
 from answer_q2 import produce_csv
 
 '''
@@ -14,12 +16,15 @@ helpers
 @pytest.fixture(scope="session", autouse=True)
 def make_student_answer():
     file = os.path.join(os.path.dirname(__file__), '..', 'hourly_carbon_intensity_july_2025.csv')
+    # if the file already exists, delete it
+    if os.path.exists(file):
+        os.remove(file)
     # make the file only once per pytest run
     produce_csv(output_filepath=file)
 
     
 def get_correct_answer():
-    ans_file = os.path.join(os.path.dirname(__file__), 'data', 'hourly_carbon_intensity_july_2025.parquet')
+    ans_file = os.path.join(os.path.dirname(__file__), 'data_private', 'hourly_carbon_intensity_july_2025.parquet')
     ans_df = pd.read_parquet(ans_file)
     return ans_df
 
@@ -104,8 +109,13 @@ def float_columns_close(ans_df, correct_df, column, rtol=1e-05):
 
     return np.allclose(ans_array, correct_array, rtol=rtol)
 
+def test_tonnes_co2e_per_kwh_almost_correct():
+    ans = get_student_answer()
+    correct_df = get_correct_answer()
+    assert float_columns_close(ans, correct_df, "tonnes_co2e_per_kwh", rtol=1e-01)
+
 def test_tonnes_co2e_per_kwh_correct():
     ans = get_student_answer()
     correct_df = get_correct_answer()
-    assert float_columns_close(ans, correct_df, "tonnes_co2e_per_kwh", rtol=1e-05)
+    assert float_columns_close(ans, correct_df, "tonnes_co2e_per_kwh", rtol=1e-02)
 

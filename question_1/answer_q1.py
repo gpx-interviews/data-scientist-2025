@@ -7,16 +7,13 @@ def normalise_dict_scores_01(input_dict: dict) -> dict:
     same shape distribution of the values
     
     Args:
-        input_dict (dict): A dictionary with string keys and numeric values.
+        input_dict (dict): A dictionary with numeric values.
     
     Returns:
         dict: A new dictionary with the same keys, but values normalised to the range [-100, 100].
-              Keys are in the same order as the input dictionary.
     '''
-
-    # TODO: write code here
-    
-    return input_dict
+    # ----------------------- TODO: write your answer here -----------------------
+    pass
 
 
 if __name__ == "__main__":
