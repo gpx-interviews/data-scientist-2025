@@ -22,5 +22,5 @@ if __name__ == "__main__":
         'b': -10,
     }
     
-    normalise_dict_scores_01(data)
-    print(data)
+    normalised_data = normalise_dict_scores_01(data)
+    print(normalised_data)
