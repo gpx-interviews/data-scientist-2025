@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 # Results are cached for speed of development, and to ensure results are deterministic
 # You don't need to change this function
 def get_data(start_date: str, end_date: str, use_cache=True):
-    cache_filepath = os.path.join(os.path.dirname(__file__), "cache", f"response_{start_date}_{end_date}.json")
+    cache_filepath = os.path.join(os.path.dirname(__file__), "cache", f"cached_response_{start_date}_{end_date}.json")
     if use_cache and os.path.exists(cache_filepath):
         with open(cache_filepath, "r") as f:
             print(f"Loading from cache for {start_date} to {end_date}")
